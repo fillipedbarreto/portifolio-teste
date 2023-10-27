@@ -1,0 +1,173 @@
+/* FONT IMPORT */
+/* MONTSERRA E KRONA ONE */
+/* GOOGLE FONTS */
+/* REFERENCIA - https://developers.google.com/fonts/docs/getting_started?hl=pt-br */
+/* REFERENCIA RODA DE CORES
+https://color.adobe.com/pt/create/color-wheel
+https://colorhunt.co/
+*/
+/* REFERENCIA - 10 PROJETOS PARA COLOCAR NO PORTIFOLIO
+https://www.youtube.com/watch?embeds_referring_euri=https%3A%2F%2Fcursos.alura.com.br%2F&source_ve_path=MTY0OTksMTY0OTksMjg2NjQsMTY0NTAz&feature=emb_share&v=y4ltLH9iK8E
+*/
+/* REFERENCIA - UNIDADES DE MEDIDAS 
+https://www.w3schools.com/cssref/css_units.php
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+/* REFERENCE VARIABLES: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
+:root {
+    --cor-background: #1d355b;
+    --cor-texto-primaria: #E8E9EB;
+    --cor-texto-secundaria: #E4B363;
+    --cor-texto-tercearia: black;
+    --cor-evento-hover: #575A84;
+
+    --fonte-primaria: 'Krona One', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif
+}
+
+/* RESET CSS*/
+*{ /* SELETOR UNIVERSAL */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /*height: 100vh;*/  /*UTILIZAR 100% DO VIEWPORT - PORÇÃO DE ÁREA VISÍVEL*/
+    box-sizing: border-box; /*MANTER OS ELEMENTOS CHILD DENTRO DOS PARENTS*/
+    background-color: var(--cor-background);
+    color: var(--cor-texto-primaria);
+}
+
+.cabecalho {
+    padding: 2% 0% 0% 15%;
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 80px;
+}
+.cabecalho__menu__link {
+    font-size: 1.5rem;
+    font-family: var(--fonte-secundaria);
+    font-weight: 600;
+    color: var(--cor-texto-secundaria);
+    text-decoration: none;
+}
+
+.apresentacao { /*CLASSE MAIN*/
+    padding: 5% 15%;
+    display: flex; /*CONFIGURAR FLEXBOX*/
+    /*REFERENCIA: 
+    https://css-tricks.com/snippets/css/a-guide-to-flexbox/ 
+    https://cursos.alura.com.br/course/css-flexbox-layouts-responsivos
+    https://cursos.alura.com.br/search/1?query=flexbox */
+    align-items: center;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.apresentacao__conteudo {   /* CLASSE MAIN */
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;  /* REFERENCE: https://css-tricks.com/almanac/properties/g/gap/ */
+}
+
+.apresentacao__conteudo__titulo {   /* CLASSE MAIN - TITULO */
+    font-size: 2.25rem;
+    font-family: var(--fonte-primaria);
+}
+
+.titulo-destaque {  /*CLASSE TEXTO EM DESTAQUE*/
+    color: var(--cor-texto-secundaria);
+}
+
+.apresentacao__conteudo__texto {    /* CLASSE MAIN - PARAGRAFO */
+    font-size: 1.5rem;
+    font-family: var(--fonte-secundaria);
+}
+
+.apresentacao__botoes {  /* CLASSE LINKS - BOTOES */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+.apresentacao__links__subtitulo {
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: var(--fonte-primaria);
+}
+
+.apresentacao__botoes__links {  /*CLASSE BOTOES */
+    /* GENERAL */
+    background-color: var(--cor-background);
+    padding: 21.5px 0px;
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    /* FLEXBOX */
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    /* REFERENCE: https://www.alura.com.br/artigos/css-border-estilizando-bordas-elementos-css */
+    /* TEXT */
+    font-size: 1.5rem;
+    font-family: var(--fonte-secundaria);
+    font-weight: 600;
+    color: var(--cor-texto-secundaria);
+    text-decoration: none;
+    /* BORDER */
+    border: 2px solid 
+}
+
+/* REFERENCE: https://www.w3schools.com/cssref/sel_hover.php */
+.apresentacao__botoes__links:hover {
+    background-color: var(--cor-evento-hover);
+}
+
+.foto-perfil {   /* CLASSE FOTO PERFIL */
+    height: 450px;
+    width: auto;
+}
+
+.apresentacao__imagem {
+    width: 50%;
+}
+
+.rodape { /* CLASSE DO FOOTER */
+    /* GENERAL */
+    color: var(--cor-texto-tercearia);
+    padding: 23.64px;
+    background-color: var(--cor-texto-secundaria);
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: var(--fonte-secundaria);
+    text-align: center;
+}
+
+/* REFERENCIA -MEDIA QUERY - RESPONSIVIDADE E TROCA PARA MOBILE
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries
+*/
+@media (max-width: 1200px) {
+    .cabecalho{
+        padding: 10% 0% 5% 0%;
+    }
+
+    .cabecalho__menu {
+        justify-content: center;
+    }
+    
+    .apresentacao {
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .apresentacao__conteudo {
+        width: auto;
+    }
+}
