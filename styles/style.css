@@ -170,4 +170,8 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_q
     .apresentacao__conteudo {
         width: auto;
     }
+
+    .apresentacao__imagem {
+        width: 80%;
+    }
 }
